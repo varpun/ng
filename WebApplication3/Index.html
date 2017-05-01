@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AngularApp</title>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>-->
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">-->
+
+    <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    <!--<script src="Scripts/angular.min.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.0/Chart.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script src="Controllers/Employee.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!--<script>
+        angular.module("CombineModule", ["mainModule", "subModule", "myModule3"]);
+    </script>-->
+</head>
+<body ng-app="mainModule">
+    <div class="container" ng-controller="myController">
+        <br />
+        <form name="outerForm" class="tab-form-demo">
+            <uib-tabset active="activeForm">
+                <!--<div style="display:inline-block; min-height:290px;">
+                    <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
+                </div>-->
+                <uib-tab index="0" heading="Table">
+                    <p class="form-group">
+                        <label>Define your format</label>
+                        <input type="text" ng-model="format" class="form-control">
+                    </p>
+                    <button class="btn-large" ng-click="open()">Retreive</button>
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr class="text-info">
+                                <th width="10">#</th>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Salary</th>
+                                <th>DeptId</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr ng-repeat="x in employee">
+                                <td>{{ $index + 1}}</td>
+                                <td>{{x.EmpId}}</td>
+                                <td>{{x.EmpName}}</td>
+                                <td>{{x.Gender}}</td>
+                                <td>{{x.Salary}}</td>
+                                <td>{{x.DeptId}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                </uib-tab>
+                <uib-tab index="1" heading="Tab One">
+                    <canvas id="bar" class="chart chart-bar"
+                            chart-data="data" chart-labels="labels">
+                        chart-series="series"
+                    </canvas>
+                </uib-tab>
+            </uib-tabset>
+        </form>
+        <!--<table class="table table-striped table-bordered">
+            <thead>
+                <tr class="text-info">
+                    <th width="10">#</th>
+                    <th>Id</th>
+                    <th>DeptName</th>
+                    <th>Head</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="y in department">
+                    <td>{{ $index + 1}}</td>
+                    <td>{{y.DeptId}}</td>
+                    <td>{{y.DeptName}}</td>
+                    <td>{{y.DeptHead}}</td>
+                    <td>{{y.DeptLocation}}</td>
+                </tr>
+            </tbody>
+        </table>-->
+    </div>
+</body>
+</html>
+
